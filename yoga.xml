@@ -4,7 +4,8 @@
     <compiler-version>2.10</compiler-version>
 
     <id>com.wighawag.p2p</id>
-    <version>0.0.1</version>
+    <version>0.1.0</version>
+	<prepared>2012-12-16 13:06:11</prepared>
 
     <main>Main</main>
 
@@ -24,13 +25,9 @@
     <config-file template="nmml.template" output="project.nmml"/>
 
     <dependencies>
-        <repository id="com.wighawag.report.Report" version="0.0.1"/>
+        <repository id="com.wighawag.report.Report" version="0.1.0"/>
+	<repository id="com.wighawag.wighawag-promhx" version="0.1.0" />
         <haxelib name="nme" version="3.4.0"/>
         <haxelib name="msignal" version="1.0.0"/>
-        <sourcezip url="https://github.com/jdonaldson/promhx/zipball/master">
-            <sources>
-                <source path="\^[^/]+/src$\"/>
-            </sources>
-        </sourcezip>
     </dependencies>
 </project>
