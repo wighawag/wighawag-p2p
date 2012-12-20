@@ -84,19 +84,28 @@ class Lobby {
                     sendAccept(); // TODO check but this should be enouhj
                     lobbyGroup.close();
                     privateGroup = new P2PGroupConnection("Lobby" + id);
-                    privateGroup.onConnect.add(privateGroupConnected);
+                    privateGroup.onConnect.addOnce(privateGroupConnected);
                     privateGroup.connect();
                 }
         }
     }
 
+	private function remoteDeviceDisconnected() :Void{
+		privateGroup.close();
+		privateGroup = null;
+	}
+
     private function privateGroupConnected() : Void{
+	    privateGroup.onNeighbourDisconnected.addOnce(remoteDeviceDisconnected);
         promise.resolve(privateGroup);
     }
 
     public function disconnect() : Void{
         state = null;
         lobbyGroup.close();
+	    if (privateGroup != null){
+		    privateGroup.close();
+	    }
     }
 }
 

@@ -17,13 +17,15 @@ class P2PGroupConnection {
 	private var groupPin:String;
     public var onMessageReceived(default,null) : Signal2<MessageWrap, Dynamic>;
 	public var onConnect(default, null) : Signal0;	
-	public var onConnectionClosed(default, null) : Signal0;	
+	public var onConnectionClosed(default, null) : Signal0;
+	public var onNeighbourDisconnected(default, null) : Signal0;
 
 	public function new(groupPin : String){
 		this.groupPin = groupPin;
 		onConnect = new Signal0();
 		onConnectionClosed = new Signal0();
         onMessageReceived = new Signal2();
+		onNeighbourDisconnected = new Signal0();
 	}
 	
 	public function connect():Void{
@@ -52,7 +54,9 @@ class P2PGroupConnection {
 			case "NetConnection.Connect.Closed":
 				connected = false;
 				onConnectionClosed.dispatch();
-				
+
+			case "NetGroup.Neighbor.Disconnect":
+				onNeighbourDisconnected.dispatch();
 			
 			case "NetGroup.SendTo.Notify":
 				onMessageReceived.dispatch(MessageWrap.parse(event.info.message),event.info);
