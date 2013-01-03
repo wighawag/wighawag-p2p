@@ -12,7 +12,7 @@
         <source path="src"/>
     </sources>
 
-    <tests framework="munit" path="test"/>
+    <tests path="test" framework="munit"/>
 
     <targets hxml="compile">
         <target name="swf">
@@ -21,12 +21,12 @@
     </targets>
 
 
-    <config-file template="nmml.template" output="project.nmml"/>
+    <config-file output="project.nmml" template="nmml.template"/>
 
     <dependencies>
-        <repository id="com.wighawag.report.Report" version="0.1.1-SNAPSHOT"/>
-	<repository id="com.wighawag.wighawag-promhx" version="0.1.0" />
-        <haxelib name="nme" version="3.4.0"/>
+        <repository version="0.1.1-SNAPSHOT" id="com.wighawag.report.Report"/>
+	<repository version="0.1.0" id="com.wighawag.wighawag-promhx"/>
+        <haxelib name="nme"/>
         <haxelib name="msignal" version="1.0.0"/>
     </dependencies>
 </project>
