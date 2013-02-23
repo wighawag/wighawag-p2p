@@ -4,8 +4,7 @@
     <compiler-version>2.10</compiler-version>
 
     <id>com.wighawag.p2p</id>
-    <version>0.1.1</version>
-	<prepared>2013-02-23 21:15:56</prepared>
+    <version>0.1.2-SNAPSHOT</version>
 
     <main>Main</main>
 
