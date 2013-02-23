@@ -4,7 +4,8 @@
     <compiler-version>2.10</compiler-version>
 
     <id>com.wighawag.p2p</id>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.1.1</version>
+	<prepared>2013-02-23 21:15:56</prepared>
 
     <main>Main</main>
 
@@ -24,8 +25,8 @@
     <config-file output="project.nmml" template="nmml.template"/>
 
     <dependencies>
-        <repository version="0.1.1-SNAPSHOT" id="com.wighawag.report.Report"/>
-	<repository version="0.1.0" id="com.wighawag.wighawag-promhx"/>
+        <repository version="0.1.1" id="com.wighawag.report.Report"/>
+	    <repository version="0.1.0" id="com.wighawag.wighawag-promhx"/>
         <haxelib name="nme"/>
         <haxelib name="msignal" version="1.0.0"/>
     </dependencies>
